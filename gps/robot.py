@@ -1,8 +1,8 @@
-from motor import Motor
+#from motor import Motor
 
 class Robot():
-    def __init__(self):
-        pass
+    def init(self):
+        self.stopped = True
 
     # Compass
     def getAngle(self):
@@ -28,32 +28,36 @@ class Robot():
     # Tells wether the robot is executing a move
     def isNotMoving(self):
         return self.stopped
-    
+
     # Set constant speed
     def constantMove(self, speed):
-        pass
+        print("Moving")
+        self.stopped = False
 
     # Set constant rotation
     def constantRotate(self, speed):
-        pass
+        print("Rotating")
+        self.stopped = False
 
     # Move a certain distance at a speed
     def move(self, speed, distance):
-        pass
+        print("Move " + distance + " at " + speed)
+        self.stopped = False
 
     # Rotate a certain amount at a certain speed
     def rotate(self, speed, degrees):
-        pass
+        print("Rotate " + degrees + " at " + speed)
+        self.stopped = False
 
     # Stop the robot
     def stop(self):
-        pass
+        print("Stopped")
+        self.stopped = True
 
 class Camera():
-    def __init__(self):
+    def init(self):
         pass
 
     # Get data from camera
     def getData(self):
         pass
-
